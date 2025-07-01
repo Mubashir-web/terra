@@ -1,0 +1,6 @@
+region_name = "us-east-2"
+cidr_block = "10.0.0.0/16"
+vpc_tag = "vpc-terra"
+az = "us-east-2a"
+subnetcidr = "10.0.1.0/24"
+bucket02 = "mucci-terra-02"
