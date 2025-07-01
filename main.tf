@@ -89,8 +89,15 @@ resource "aws_s3_bucket" "s3-bucket02" {
   bucket = var.bucket02
 
   tags = {
-    Name        = "mucci-terra02"
+    Name        = "mucci-terr2"
     Environment = "Dev"
+  }
+  lifecycle {
+    create_before_destroy = true
+    #prevent_destroy       = true
+    ignore_changes        = [
+      tags["LastModifiedBy"]
+    ]
   }
   depends_on = [aws_s3_bucket.s3-bucket03]
 }
